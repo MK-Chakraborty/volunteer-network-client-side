@@ -2,16 +2,24 @@ import React from 'react';
 import { Col, Container, Row, Button } from 'react-bootstrap';
 import logo from '../../images/logos/Group 1329.png'
 import glglogo from '../../images/logos/2993685_brand_brands_google_logo_logos_icon.png'
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 
 const LogIn = () => {
     const { signInWithGoogle } = useAuth();
     const location = useLocation();
-    
+    const history = useHistory();
+    const redriect_uri = location.state?.from || '/home';
+
 
     const handleGoogleLogIn = () => {
-        signInWithGoogle();
+        signInWithGoogle()
+            .then((result) => {
+                history.push(redriect_uri)
+            })
+            .catch((error) => {
+                console.log(error.message);
+            })
     }
 
     return (
