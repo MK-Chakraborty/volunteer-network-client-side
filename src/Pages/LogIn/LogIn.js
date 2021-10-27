@@ -6,7 +6,7 @@ import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 
 const LogIn = () => {
-    const { signInWithGoogle } = useAuth();
+    const { signInWithGoogle, setIsLoading } = useAuth();
     const location = useLocation();
     const history = useHistory();
     const redriect_uri = location.state?.from || '/home';
@@ -16,9 +16,7 @@ const LogIn = () => {
             .then((result) => {
                 history.push(redriect_uri)
             })
-            .catch((error) => {
-                console.log(error.message);
-            })
+            .finally(() => setIsLoading(false));
     }
 
     return (
