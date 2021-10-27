@@ -26,7 +26,7 @@ const Header = () => {
                             <NavLink to="/link" className="text-decoration-none"><h6 className="fs-6 fw-bold text-secondary px-3 py-2">Donation</h6></NavLink>
                             <NavLink to="/link" className="text-decoration-none"><h6 className="fs-6 fw-bold text-secondary px-3 py-2">Events</h6></NavLink>
                             <NavLink to="/link" className="text-decoration-none"><h6 className="fs-6 fw-bold text-secondary px-3 py-2">Blog</h6></NavLink>
-                            <NavLink to="/link"><Button className="mx-3 mb-3">Register</Button></NavLink>
+                            <NavLink to="/register"><Button className="mx-3 mb-3">Register</Button></NavLink>
                             <NavLink to="/link"><Button variant="secondary">Admin</Button></NavLink>
                         </Nav>
                     </Navbar.Collapse>

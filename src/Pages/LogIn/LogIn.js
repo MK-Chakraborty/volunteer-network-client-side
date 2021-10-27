@@ -2,11 +2,13 @@ import React from 'react';
 import { Col, Container, Row, Button } from 'react-bootstrap';
 import logo from '../../images/logos/Group 1329.png'
 import glglogo from '../../images/logos/2993685_brand_brands_google_logo_logos_icon.png'
-import { Link } from 'react-router-dom';
-import useFirebase from '../../Hooks/useFirebase';
+import { Link, useLocation } from 'react-router-dom';
+import useAuth from '../../Hooks/useAuth';
 
 const LogIn = () => {
-    const { signInWithGoogle } = useFirebase();
+    const { signInWithGoogle } = useAuth();
+    const location = useLocation();
+    
 
     const handleGoogleLogIn = () => {
         signInWithGoogle();
