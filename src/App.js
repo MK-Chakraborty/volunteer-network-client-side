@@ -3,6 +3,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './Pages/Home/Home';
 import Header from './Pages/Shared/Header/Header';
+import LogIn from './Pages/LogIn/LogIn';
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
           </Route>
           <Route path="/home">
             <Home></Home>
+          </Route>
+          <Route path="/login">
+            <LogIn></LogIn>
           </Route>
         </Switch>
       </Router>
