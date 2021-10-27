@@ -11,7 +11,6 @@ const LogIn = () => {
     const history = useHistory();
     const redriect_uri = location.state?.from || '/home';
 
-
     const handleGoogleLogIn = () => {
         signInWithGoogle()
             .then((result) => {
