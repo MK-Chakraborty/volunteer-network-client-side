@@ -8,13 +8,23 @@ import { useParams } from 'react-router';
 
 const Register = () => {
     const { catagory } = useParams();
-    console.log({ catagory });
+    const { user } = useAuth();
     // get current date
     let today = new Date().toLocaleDateString()
 
     const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
-    const { user } = useAuth();
+
+    const onSubmit = data => {
+        fetch('http://localhost:5000/registered', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(result => console.log(result));
+    };
     return (
         <Container>
             <img src={logo} className="w-25 mt-3 mb-5" alt="" />
